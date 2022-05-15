@@ -1,0 +1,19 @@
+---
+---
+@import "main";
+
+.current {
+  color: green;
+}
+
+nav {
+  background-color: gold;
+}
+
+a {
+  padding: 100px;
+}
+
+a.current {
+  padding: 100px;
+}

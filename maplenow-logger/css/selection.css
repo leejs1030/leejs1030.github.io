@@ -1,0 +1,11 @@
+#selection > * {
+  align-content: center;
+  text-align-all: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+#date {
+  align-self: center;
+}

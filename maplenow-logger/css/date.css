@@ -1,0 +1,31 @@
+#calendar {
+  display: none;
+  position: absolute;
+  left: 30px;
+}
+
+#date:hover > #calendar {
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+}
+
+#date {
+  /*padding-right: 300px;*/
+  display: inline-block;
+}
+
+#time {
+  display: inline-block;
+  /*height: 300px;*/
+}
+
+#selection > * {
+  display: inline-block;
+}
+
+#time-msg {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}

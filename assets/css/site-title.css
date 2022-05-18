@@ -27,11 +27,17 @@ a.site-title::selection {
     background: #000;
 }
 
-.masthead__inner-wrap{
+a.site-title:hover, a.site-title:focus {
+    text-decoration: none;
+    background-color: transparent;
+    color: #40514e;
+}
+
+.masthead__inner-wrap {
     padding: 1em;
 }
 
-.masthead{
+.masthead {
     border-bottom: 1px;
 }
 

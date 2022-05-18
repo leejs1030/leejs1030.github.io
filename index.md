@@ -1,8 +1,8 @@
 ---
 layout: home
 author_profile: true
+title: 환영합니다
 ---
-## 환영합니다.
 
 | [![넥슨 나우 로거](/resources/index-img/maplenow-logger.png)](/blog/maplenow/how-to-use) |
 | 사진 클릭 시 사용법 페이지로 이동 |

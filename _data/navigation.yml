@@ -4,6 +4,8 @@ main:
     ufl: /
   - title: "메이플 나우 로거"
     url: /maplenow-logger
+  - title: "메이플 성장 비약 계산기"
+    url: /maple-exp-calc
 #  - title: "Quick-Start Guide"
 #    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 #   - title: "About"

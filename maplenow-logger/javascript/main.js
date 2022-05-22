@@ -1,5 +1,5 @@
 const base = "https://ljs1030.github.io/maplenow-logs-html";
-const regex = /.*\/[1-5]/;
+const regex = /.*\/[1-6]/;
 const selection = document.getElementById("select-page");
 const pos = $("#html-position");
 const dateInput = $("#date input");
@@ -8,7 +8,6 @@ const minTime = 1652530199000; //서비스 시작 시점! 수정 필요.
 bootstrap(new Date(minTime + 9 * 60 * 60 * 1000));
 
 const mergeCell = (column = 0) => {
-  console.log(column);
   const tables = document.querySelectorAll('table');
 
   tables.forEach((table) => {
@@ -16,10 +15,6 @@ const mergeCell = (column = 0) => {
     let headerLength = null;
     [...table.rows].forEach((row, idx) => {
       const firstCell = row.cells[headerLength ? column - headerLength + row.cells.length : column];
-      console.log('\n\nhi')
-      console.log(headerLength ? column + headerLength - row.cells.length : column);
-      console.log(firstCell.innerText);
-
       if (headerCell === null || firstCell.innerText !== headerCell.innerText) {
         headerCell = firstCell;
         headerLength = headerLength ? headerLength : row.cells.length;
@@ -43,11 +38,10 @@ const loadHtml = ({year, month, day, hour, page}) => {
     pos.load(
       `${base}/${year}/${month}/${day}/${hour}/${page}.html #body-div`,
       (r, s) => {
-        if (s === "error") {
-          return alert("알 수 없는 이유로 로그를 가져올 수 없습니다...")
-        }
+        if (s === "error") return alert('알 수 없는 이유로 로그를 가져올 수 없습니다...\n' +
+        '서버의 사정으로 로그가 찍히지 않았을 가능성이 높습니다.\n' +
+        '혹은 사용자의 네트워크의 사정 상 실패하였을 수 있습니다.');
         const mergeRequired = getMergeRequired(page);
-        console.log(mergeRequired);
         mergeRequired.forEach(mergeCell);
       }
     );

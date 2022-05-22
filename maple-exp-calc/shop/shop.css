@@ -1,0 +1,35 @@
+.user_info{
+    text-align: center;
+    font-size: 20px;
+}
+
+.frame.show_result{
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.show_result{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#submit{
+    text-align: center;
+    font-size: 20px;
+}
+
+.tab { white-space: pre; }
+
+.navbar-brand{
+    padding-top: 8px;
+    padding-left: 12px;
+}
+
+.navbar-default {
+    background-color: rgb(180, 213, 252);
+}
+
+li > a{
+    font-size: 18px;
+}
+

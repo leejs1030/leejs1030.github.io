@@ -13,7 +13,7 @@ const mergeCell = (column = 0) => {
   tables.forEach((table) => {
     let headerCell = null;
     let headerLength = null;
-    [...table.rows].forEach((row, idx) => {
+    [...table.rows].forEach((row) => {
       const firstCell = row.cells[headerLength ? column - headerLength + row.cells.length : column];
       if (headerCell === null || firstCell.innerText !== headerCell.innerText) {
         headerCell = firstCell;

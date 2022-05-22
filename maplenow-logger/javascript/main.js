@@ -11,52 +11,32 @@ const mergeCell = (column = 0) => {
   console.log(column);
   const tables = document.querySelectorAll('table');
 
-  let headerCell = null;
   tables.forEach((table) => {
-
-    for (let row of table.rows) {
-      console.log(row.cells);
-      console.log(column);
-      const firstCell = row.cells[row.cells.length - column];
+    let headerCell = null;
+    let headerLength = null;
+    [...table.rows].forEach((row, idx) => {
+      const firstCell = row.cells[headerLength ? column - headerLength + row.cells.length : column];
+      console.log('\n\nhi')
+      console.log(headerLength ? column + headerLength - row.cells.length : column);
       console.log(firstCell.innerText);
 
       if (headerCell === null || firstCell.innerText !== headerCell.innerText) {
         headerCell = firstCell;
+        headerLength = headerLength ? headerLength : row.cells.length;
       } else {
         headerCell.rowSpan++;
         firstCell.remove();
       }
-    }
+    })
   });
 };
 
 const mergeRequiredIndex = {
-  'cube/1': [4],
-  'cube/2': [5, 4],
-  'cube/3': [4],
-  'cube/4': [5, 4],
-  'abil/1': [5],
-  'abil/2': [4],
-  'outfit/1': [4],
-  'outfit/2': [4],
-  'outfit/3': [4],
-  'beauty/1': [4],
-  'beauty/2': [4],
-  'beauty/3': [4],
-  'beauty/4': [4],
-  'beauty/5': [4],
-  'beauty/6': [4],
-  'pet/1': [3],
-  'pet/2': [3],
-  'pet/3': [3],
-  'star/1': [5],
-  'star/2': [5],
-  'star/3': [5],
-  'star/4': [5],
-  'star/5': [5],
+  'cube/2': [0, 1],
+  'cube/4': [0, 1],
 };
 
-const getMergeRequired = (page) => mergeRequiredIndex[page];
+const getMergeRequired = (page) => mergeRequiredIndex[page] ? mergeRequiredIndex[page] : [0];
 
 const loadHtml = ({year, month, day, hour, page}) => {
   try {

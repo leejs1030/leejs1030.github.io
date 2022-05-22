@@ -2,7 +2,7 @@
 import * as data from '../js/exp.js';
 
 const elixirCountMapper = [0, 8, 4, 2, 1];
-const elixirNameMapper = ["", "성장의 비약(200~209) 8개", "성장의 비약(200~219) 4개", "성장의 비약(200~229) 2개", "성장의 비약(200~239) 1개"]
+const elixirNameMapper = ["", "성장의 비약1(200~209) 8개", "성장의 비약2(200~219) 4개", "성장의 비약3(200~229) 2개", "태풍 성장의 비약(200~239) 1개"]
 
 const useElixirs = (num) => {
   data.user.level = parseInt(document.getElementById("input_level").value);

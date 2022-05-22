@@ -1,4 +1,5 @@
-const data = require('../js/exp.js');
+// const data = require('../js/exp.js');
+import * as data from '../js/exp.js';
 
 const main = () =>{
     data.user.level = parseInt(document.getElementById("input_level").value);

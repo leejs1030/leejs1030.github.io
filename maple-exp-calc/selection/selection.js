@@ -1,4 +1,5 @@
-const data = require('../js/exp.js');
+// const data = require('../js/exp.js');
+import * as data from '../js/exp.js';
 
 const elixirCountMapper = [0, 8, 4, 2, 1];
 const elixirNameMapper = ["", "성장의 비약(200~209) 8개", "성장의 비약(200~219) 4개", "성장의 비약(200~229) 2개", "성장의 비약(200~239) 1개"]

@@ -4,10 +4,14 @@ layout: seo
 <!DOCTYPE html>
 {% include head.html %}
 <html lang="kr">
-<link rel="stylesheet" href="/assets/css/site-title.css" />
-{% include scripts.html %}
+<link rel="stylesheet" href="/assets/css/site-title.css"/>
 <body>
 {% include_cached masthead.html %}
-{{content}}
+
+<div class="initial-content">
+  {{content}}
+</div>
+
+{% include analytics.html %}
 </body>
 </html>

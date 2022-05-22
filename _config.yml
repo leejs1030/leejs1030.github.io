@@ -20,7 +20,7 @@ title                    : "leejs1030 사이트 홈"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "leejs1030"
-description              : "leejs1030의 블로그입니다."
+description              : "leejs1030 블로그 - 개발 & 메이플스토리"
 url                      : "https://leejs1030.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "leejs1030/leejs1030.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -94,9 +94,11 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          :
+    tracking_id          : 'G-GD5FFMCTML'
+#    stream_id: 'G-GD5FFMCTML'
+#    measurement_id: 'G-GD5FFMCTML'
     anonymize_ip         : # true, false (default)
 
 
@@ -104,9 +106,9 @@ analytics:
 author:
   name             : "leejs1030"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "개발중"
+  bio              : "Developing Developer<br>스스로를 개발중인 초보 개발자"
   location         : "Korea"
-  email            : "leejs1030@korea.ac.kr"
+  email            : leejs1030@korea.ac.kr
   links:
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"
@@ -116,8 +118,14 @@ author:
       url: "https://github.com/leejs1030"
 
 # Site Footer
-# footer:
-#   links:
+footer:
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: mailto:leejs1030@korea.ac.kr
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/leejs1030"
 
 
 # Reading Files

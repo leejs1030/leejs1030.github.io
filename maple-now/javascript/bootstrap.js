@@ -1,30 +1,35 @@
-const bootstrap = (minTime) => {
+'use strict';
+
+const getDateString = (date) => {
+  const year = date.getUTCFullYear();
+  const month = date.getUTCMonth() + 1;
+  const day = date.getUTCDate();
+  return `${year}/${month}/${day}`;
+}
+
+const bootstrap = () => {
+  const minTime = new Date('2022-05-14T21:00:00+09:00');
+  const defaultTime = new Date('2022-06-01T21:00:00+09:00');
+  const maxTime = new Date('2023-07-28T08:00:00+09:00');
+
   const date = document.querySelector("#date input");
   // 오늘 날짜 string
-  const now = new Date();
-  now.setUTCHours(now.getUTCHours() + 9);
-  const todayString = `${now.getUTCFullYear()}/${
-    now.getUTCMonth() + 1
-  }/${now.getUTCDate()}`;
+  const baseDate = new Date('2022-05-14T21:00:00+09:00');
+  baseDate.setUTCHours(baseDate.getUTCHours() + 9);
 
   const minDate = document.createAttribute("data-min-date");
-  const beforeYear = new Date(now);
-  beforeYear.setUTCFullYear(now.getUTCFullYear() - 1);
-  if (minTime <= beforeYear) minTime = beforeYear;
-  minDate.value = `${minTime.getUTCFullYear()}/${
-    minTime.getUTCMonth() + 1
-  }/${minTime.getUTCDate()}`;
+  minDate.value = getDateString(minTime);
   date.attributes.setNamedItem(minDate);
 
   // 현재 날짜 이후로 선택 불가
   const maxDate = document.createAttribute("data-max-date");
-  maxDate.value = todayString;
+  maxDate.value = getDateString(maxTime);
   date.attributes.setNamedItem(maxDate);
 
   // 기본 값을 오늘 날짜로
-  const value = document.createAttribute("value");
-  value.value = todayString;
-  date.attributes.setNamedItem(value);
+  const currentDate = document.createAttribute("value");
+  currentDate.value = getDateString(defaultTime);
+  date.attributes.setNamedItem(currentDate);
 
   Metro.utils.addLocale({
     "ko-KR": {

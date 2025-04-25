@@ -4,7 +4,7 @@ const selection = document.getElementById("select-page");
 const pos = $("#html-position");
 const dateInput = $("#date input");
 
-bootstrap();
+const { minTime, maxTime } = bootstrap();
 
 const loadHtml = ({ year, month, day, hour, page }) => {
   try {
@@ -26,7 +26,7 @@ const loadHtml = ({ year, month, day, hour, page }) => {
 const validateDate = ({ year, month, day, hour }) => {
   const now = new Date();
   const selected = new Date(`${year}-${month}-${day}T${hour}:10:00`).getTime(); // utc 0 시간
-  const maxTime = now.getTime(); // utc 0 시간
+  // const maxTime = now.getTime(); // utc 0 시간
   const beforeYear = (() => {
     const x = new Date(now);
     x.setUTCFullYear(now.getUTCFullYear() - 1);
@@ -37,9 +37,6 @@ const validateDate = ({ year, month, day, hour }) => {
     return false;
   } else if (selected <= minTime) {
     alert("로깅 서비스 시작 전으로, 조회할 수 없는 데이터입니다!");
-    return false;
-  } else if (selected <= beforeYear) {
-    alert("로그의 최대 보관 기한은 1년입니다!");
     return false;
   }
   return true;

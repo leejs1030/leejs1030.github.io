@@ -11,6 +11,7 @@ const bootstrap = () => {
   const minTime = new Date('2022-05-14T21:00:00+09:00');
   const defaultTime = new Date('2022-06-01T21:00:00+09:00');
   const maxTime = new Date('2023-07-28T08:00:00+09:00');
+  console.log("bootstrap");
 
   const date = document.querySelector("#date input");
   // 오늘 날짜 string
@@ -30,6 +31,10 @@ const bootstrap = () => {
   const currentDate = document.createAttribute("value");
   currentDate.value = getDateString(defaultTime);
   date.attributes.setNamedItem(currentDate);
+
+  console.log("minDate", minDate.value);
+  console.log("maxDate", maxDate.value);
+  console.log("currentDate", currentDate.value);
 
   Metro.utils.addLocale({
     "ko-KR": {
@@ -70,4 +75,6 @@ const bootstrap = () => {
       },
     },
   });
+
+  return { minTime, maxTime };
 };
